@@ -50,7 +50,7 @@ class TabBarController: UITabBarController {
                 self.present(loginVC, animated: true, completion: nil)
             }
         }else {
-            alertAction(title: "Vay be", mesaj: "Aramıza tekrar hoş geldin :)")
+            alertAction(title: "", mesaj: "Aramıza tekrar hoş geldin :)")
         }
     }
     

@@ -71,6 +71,13 @@ class RegisterViewController: UIViewController{
         let user = User(email: email, password: password, username: username, profileImage: profileImage)
         
         AuthService.shared.registerUser(user: user) { error,ref in
+            
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print(error.localizedDescription)
+            }
+            
             self.delegate?.registerSuccesfully(succesfully: true,email: email)
             self.dismiss(animated: true, completion: nil)
         }
