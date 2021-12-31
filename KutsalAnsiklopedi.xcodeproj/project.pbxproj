@@ -101,7 +101,6 @@
 				D42C7217277E6FC900E9D5E1 /* AppDelegate.swift */,
 				D42C7219277E6FC900E9D5E1 /* SceneDelegate.swift */,
 				D42C721D277E6FC900E9D5E1 /* Main.storyboard */,
-				D42C7231277E831900E9D5E1 /* Extensions.swift */,
 				D42C7220277E6FCD00E9D5E1 /* Assets.xcassets */,
 				D42C7222277E6FCD00E9D5E1 /* LaunchScreen.storyboard */,
 				D42C7225277E6FCD00E9D5E1 /* Info.plist */,
@@ -123,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D4890040277F2EEF00EC0A69 /* Constants.swift */,
+				D42C7231277E831900E9D5E1 /* Extensions.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController {
     
@@ -23,7 +24,12 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        configureUI()
         
+    }
+    
+    func configureUI(){
         view.addSubview(addButton)
         addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -64).isActive = true
@@ -32,6 +38,28 @@ class TabBarController: UITabBarController {
     }
     
     @objc func addButtonPressed(){
-        print("Add button pressed")
+        authenticateUserAndConfigUI()
+    }
+    
+    //MARK: - api
+    func authenticateUserAndConfigUI(){
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = mainStoryBoard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true, completion: nil)
+            }
+        }else {
+            alertAction(title: "Vay be", mesaj: "Hoş geldin yeni üye :)))")
+        }
+    }
+    
+    func cikisyap(){
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }

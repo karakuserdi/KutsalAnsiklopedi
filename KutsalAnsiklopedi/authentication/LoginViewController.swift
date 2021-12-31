@@ -13,6 +13,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var dontHaveAnAccountButton: UIButton!
+    @IBOutlet weak var continueAsAnonymousButton: UIButton!
     
     var isSuccess:Bool = false
     
@@ -24,8 +25,8 @@ class LoginViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         if (isSuccess){
-            alertTimer(title: "", mesaj: "Kayıt işlemi başarılı.")
-        isSuccess = false
+            alertAction(title: "", mesaj: "Kayıt işlemi başarılı.")
+            isSuccess = false
         }
     }
     
@@ -37,13 +38,20 @@ class LoginViewController: UIViewController{
     }
     
     func configureUI(){
-        dontHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Don't have an account? ", second: "Sign Up"), for: .normal)
+        continueAsAnonymousButton.setAttributedTitle(NSAttributedString().attributedString(first: "Continue as ", second: "Anonymous!", color: UIColor.darkGray, fontSize: 13), for: .normal)
+        dontHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Don't have an account? ", second: "Sign Up", color: UIColor.orange, fontSize: 16), for: .normal)
     }
     
     //MARK: - Actions
     @IBAction func loginButtonPressed(_ sender: Any) {
         
     }
+    
+    @IBAction func continueAsAnonymousButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension LoginViewController: RegisterViewControllerDelegate{

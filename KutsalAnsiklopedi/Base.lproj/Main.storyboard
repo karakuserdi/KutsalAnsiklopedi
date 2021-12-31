@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1h-DS-6Ib">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfa-C7-GNw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -27,7 +27,7 @@
         <!--Login View Controller-->
         <scene sceneID="Hin-23-eZa">
             <objects>
-                <viewController id="Q1h-DS-6Ib" customClass="LoginViewController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="Q1h-DS-6Ib" customClass="LoginViewController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VGn-jT-zVc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,16 +39,6 @@
                                     <constraint firstAttribute="height" constant="150" id="lCs-tR-AFL"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq4-Ku-JPf">
-                                <rect key="frame" x="32" y="809" width="350" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Don't have an account? Sign Up">
-                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="red-QJ-A2I" kind="show" identifier="toRegister" id="u10-zJ-RCa"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-qE-U5b">
                                 <rect key="frame" x="32" y="303" width="350" height="190"/>
                                 <subviews>
@@ -84,21 +74,47 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-ne-mmQ">
+                                <rect key="frame" x="32" y="750" width="350" height="82"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xy5-Om-6QN">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Continue as anonymous">
+                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="continueAsAnonymousButtonPressed:" destination="Q1h-DS-6Ib" eventType="touchUpInside" id="H6G-LY-PeQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq4-Ku-JPf">
+                                        <rect key="frame" x="0.0" y="51" width="350" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Don't have an account? Sign Up">
+                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="red-QJ-A2I" kind="show" identifier="toRegister" id="u10-zJ-RCa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HQL-5m-bYI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ljv-ne-mmQ" firstAttribute="leading" secondItem="HQL-5m-bYI" secondAttribute="leading" constant="32" id="0LD-Vk-e75"/>
                             <constraint firstItem="dDG-qE-U5b" firstAttribute="leading" secondItem="HQL-5m-bYI" secondAttribute="leading" constant="32" id="4wk-WB-rkl"/>
                             <constraint firstItem="TFv-cG-0v4" firstAttribute="top" secondItem="HQL-5m-bYI" secondAttribute="top" constant="64" id="6ic-mZ-OnH"/>
                             <constraint firstItem="HQL-5m-bYI" firstAttribute="trailing" secondItem="dDG-qE-U5b" secondAttribute="trailing" constant="32" id="Cpy-sL-Khk"/>
                             <constraint firstItem="dDG-qE-U5b" firstAttribute="top" secondItem="TFv-cG-0v4" secondAttribute="bottom" constant="45" id="Jz7-tB-S0F"/>
-                            <constraint firstItem="vq4-Ku-JPf" firstAttribute="leading" secondItem="HQL-5m-bYI" secondAttribute="leading" constant="32" id="L1y-O8-ump"/>
+                            <constraint firstItem="HQL-5m-bYI" firstAttribute="trailing" secondItem="ljv-ne-mmQ" secondAttribute="trailing" constant="32" id="VgL-sY-mBz"/>
                             <constraint firstItem="TFv-cG-0v4" firstAttribute="centerX" secondItem="VGn-jT-zVc" secondAttribute="centerX" id="YaZ-ag-InM"/>
-                            <constraint firstItem="vq4-Ku-JPf" firstAttribute="bottom" secondItem="HQL-5m-bYI" secondAttribute="bottom" constant="-22" id="dxc-bO-l7O"/>
-                            <constraint firstItem="HQL-5m-bYI" firstAttribute="trailing" secondItem="vq4-Ku-JPf" secondAttribute="trailing" constant="32" id="uhT-7y-xIj"/>
+                            <constraint firstItem="HQL-5m-bYI" firstAttribute="bottom" secondItem="ljv-ne-mmQ" secondAttribute="bottom" constant="30" id="mRy-Rq-QJH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueAsAnonymousButton" destination="xy5-Om-6QN" id="bhk-Lp-5k3"/>
                         <outlet property="dontHaveAnAccountButton" destination="vq4-Ku-JPf" id="oVs-kd-bC9"/>
                         <outlet property="emailTextField" destination="hZm-U2-CGx" id="g7H-NW-im8"/>
                         <outlet property="passwordTextField" destination="Afl-xL-zMe" id="yf4-nb-lQH"/>
@@ -230,7 +246,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Flh-hB-Zxe">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vfa-C7-GNw" customClass="TabBarController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="vfa-C7-GNw" customClass="TabBarController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W7l-qw-qT0">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

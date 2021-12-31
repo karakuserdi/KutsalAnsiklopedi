@@ -8,16 +8,16 @@
 import UIKit
 
 extension NSAttributedString{
-    func attributedString(first:String,second:String) -> NSAttributedString {
-        let attributedText = NSMutableAttributedString(string: first, attributes: [.font:UIFont.systemFont(ofSize: 15)])
+    func attributedString(first:String,second:String,color: UIColor, fontSize: CGFloat) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: first, attributes: [.font:UIFont.systemFont(ofSize: fontSize)])
         
-        attributedText.append(NSAttributedString(string: second, attributes: [.font:UIFont.boldSystemFont(ofSize: 15),.foregroundColor: UIColor.orange]))
+        attributedText.append(NSAttributedString(string: second, attributes: [.font:UIFont.boldSystemFont(ofSize: 15),.foregroundColor: color]))
         return attributedText
     }
 }
 
 extension UIViewController{
-    func alertTimer(title:String?,mesaj:String?){
+    func alertAction(title:String?,mesaj:String?){
         let alert = UIAlertController(title: "", message: mesaj, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         

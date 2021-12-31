@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController{
         profileImageView.layer.masksToBounds = true
         profileImageView.contentMode = .scaleAspectFill
         
-        alreadyHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Already have an account? ", second: "Log In"), for: .normal)
+        alreadyHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Already have an account? ", second: "Log In", color: UIColor.orange, fontSize: 16), for: .normal)
     }
     
     
@@ -64,7 +64,7 @@ class RegisterViewController: UIViewController{
         guard let username = usernameTextField.text else {return}
     
         if password != repassword{
-            alertTimer(title: "", mesaj: "Şifreler uyuşmuyor")
+            alertAction(title: "", mesaj: "Şifreler uyuşmuyor")
             return
         }
         
