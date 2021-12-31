@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
-class RegisterViewController: UIViewController {
+protocol RegisterViewControllerDelegate{
+    func kayitBasarili(basarili: Bool)
+}
+
+class RegisterViewController: UIViewController{
+    
     //MARK: - Properties
+    
+    var delegate:RegisterViewControllerDelegate?
     
     //imagepicker
     private let imagePicker = UIImagePickerController()
@@ -18,8 +26,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repasswordTextField: UITextField!
-    
-    
     @IBOutlet weak var alreadyHaveAnAccountButton: UIButton!
     
     //MARK: - Lifecycle
@@ -47,8 +53,30 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
-        print("sign up button pressed")
+        guard let profileImage = profileImageView.image else {
+            print("profil foto seçiniz")
+            return
+        }
+        
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        guard let repassword = repasswordTextField.text else {return}
+        guard let username = usernameTextField.text else {return}
+    
+        if password != repassword{
+            alertTimer(title: "", mesaj: "Şifreler uyuşmuyor")
+            return
+        }
+        
+        let user = User(email: email, password: password, username: username, profileImage: profileImage)
+        
+        AuthService.shared.registerUser(user: user) { error,ref in
+            self.delegate?.kayitBasarili(basarili: true)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
+  
     
     @IBAction func alreadyHaveAnAccountButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

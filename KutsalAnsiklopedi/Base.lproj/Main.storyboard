@@ -46,7 +46,7 @@
                                     <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="red-QJ-A2I" kind="show" id="u10-zJ-RCa"/>
+                                    <segue destination="red-QJ-A2I" kind="show" identifier="toRegister" id="u10-zJ-RCa"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-qE-U5b">

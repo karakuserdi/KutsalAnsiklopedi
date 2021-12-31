@@ -7,13 +7,16 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+
+
+class LoginViewController: UIViewController{
 
     //MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var dontHaveAnAccountButton: UIButton!
     
+    var isSuccess:Bool = false
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -21,10 +24,21 @@ class LoginViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if (isSuccess){
+            alertTimer(title: "", mesaj: "Kayıt işlemi başarılı.")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRegister"{
+            let destinationVC = segue.destination as! RegisterViewController
+            destinationVC.delegate = self
+        }
+    }
+    
     func configureUI(){
         dontHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Don't have an account? ", second: "Sign Up"), for: .normal)
-        
-        
     }
     
     //MARK: - Actions
@@ -32,3 +46,10 @@ class LoginViewController: UIViewController {
         
     }
 }
+
+extension LoginViewController: RegisterViewControllerDelegate{
+    func kayitBasarili(basarili: Bool) {
+        isSuccess = basarili
+    }
+}
+
