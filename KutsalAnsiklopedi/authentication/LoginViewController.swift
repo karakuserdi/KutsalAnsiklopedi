@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class LoginViewController: UIViewController{
 
     //MARK: - Properties
@@ -49,8 +47,8 @@ class LoginViewController: UIViewController{
 }
 
 extension LoginViewController: RegisterViewControllerDelegate{
-    func kayitBasarili(basarili: Bool, email: String) {
-        isSuccess = basarili
+    func registerSuccesfully(succesfully: Bool, email: String) {
+        isSuccess = succesfully
         emailTextField.text = email
     }
 }
