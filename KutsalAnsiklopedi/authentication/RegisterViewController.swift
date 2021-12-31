@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 protocol RegisterViewControllerDelegate{
-    func kayitBasarili(basarili: Bool)
+    func kayitBasarili(basarili: Bool, email:String)
 }
 
 class RegisterViewController: UIViewController{
@@ -71,7 +71,7 @@ class RegisterViewController: UIViewController{
         let user = User(email: email, password: password, username: username, profileImage: profileImage)
         
         AuthService.shared.registerUser(user: user) { error,ref in
-            self.delegate?.kayitBasarili(basarili: true)
+            self.delegate?.kayitBasarili(basarili: true,email: email)
             self.dismiss(animated: true, completion: nil)
         }
     }

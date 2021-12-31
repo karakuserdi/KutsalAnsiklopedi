@@ -27,6 +27,7 @@ class LoginViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         if (isSuccess){
             alertTimer(title: "", mesaj: "Kayıt işlemi başarılı.")
+        isSuccess = false
         }
     }
     
@@ -48,8 +49,9 @@ class LoginViewController: UIViewController{
 }
 
 extension LoginViewController: RegisterViewControllerDelegate{
-    func kayitBasarili(basarili: Bool) {
+    func kayitBasarili(basarili: Bool, email: String) {
         isSuccess = basarili
+        emailTextField.text = email
     }
 }
 
