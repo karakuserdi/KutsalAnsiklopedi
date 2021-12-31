@@ -22,8 +22,9 @@ class LoginViewController: UIViewController {
     }
     
     func configureUI(){
-        //signUp button attributedString
         dontHaveAnAccountButton.setAttributedTitle(NSAttributedString().attributedString(first: "Don't have an account? ", second: "Sign Up"), for: .normal)
+        
+        
     }
     
     //MARK: - Actions
