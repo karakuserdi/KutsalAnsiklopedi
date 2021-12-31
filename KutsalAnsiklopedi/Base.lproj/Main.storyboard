@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfa-C7-GNw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1h-DS-6Ib">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -11,7 +11,6 @@
         <!--Home Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -21,6 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home Page" id="Y2a-Td-qex"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280" y="-246"/>
         </scene>
@@ -52,7 +52,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dDG-qE-U5b">
                                 <rect key="frame" x="32" y="303" width="350" height="190"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZm-U2-CGx">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZm-U2-CGx">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="qON-Nq-JLp"/>
@@ -78,6 +78,9 @@
                                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="Q1h-DS-6Ib" eventType="touchUpInside" id="uU4-OF-fgA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -97,6 +100,8 @@
                     </view>
                     <connections>
                         <outlet property="dontHaveAnAccountButton" destination="vq4-Ku-JPf" id="oVs-kd-bC9"/>
+                        <outlet property="emailTextField" destination="hZm-U2-CGx" id="g7H-NW-im8"/>
+                        <outlet property="passwordTextField" destination="Afl-xL-zMe" id="yf4-nb-lQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUl-bo-4Ej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -111,13 +116,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_image" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-j6-iwJ">
-                                <rect key="frame" x="132" y="99" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Wnz-Je-2oT"/>
-                                    <constraint firstAttribute="width" constant="150" id="YsB-bl-u1V"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-9j-gLb">
                                 <rect key="frame" x="32" y="809" width="350" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -129,7 +127,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-lc-kyo">
-                                <rect key="frame" x="32" y="294" width="350" height="330"/>
+                                <rect key="frame" x="32" y="286" width="350" height="330"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4Q-Du-1ix">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
@@ -173,32 +171,61 @@
                                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpButtonPressed:" destination="red-QJ-A2I" eventType="touchUpInside" id="Jx6-6L-ahU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNy-qm-ErS">
+                                <rect key="frame" x="132" y="76" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1B6-uc-z8y"/>
+                                    <constraint firstAttribute="height" constant="150" id="Yjt-VC-c9G"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="add_image"/>
+                                <connections>
+                                    <action selector="profilePhotoButtonPressed:" destination="red-QJ-A2I" eventType="touchUpInside" id="7VR-xW-zlM"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2f-WS-j7X">
+                                <rect key="frame" x="132" y="76" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="I8K-fl-e3D"/>
+                                    <constraint firstAttribute="width" constant="150" id="YNg-Bx-T1i"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dHL-jI-Ew7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lui-j6-iwJ" firstAttribute="top" secondItem="dHL-jI-Ew7" secondAttribute="top" constant="55" id="CBn-sZ-jB2"/>
+                            <constraint firstItem="XNy-qm-ErS" firstAttribute="centerX" secondItem="zIS-qx-Thp" secondAttribute="centerX" id="7dV-3N-rBr"/>
+                            <constraint firstItem="BXH-lc-kyo" firstAttribute="top" secondItem="k2f-WS-j7X" secondAttribute="bottom" constant="60" id="BU8-KX-8Pb"/>
+                            <constraint firstItem="XNy-qm-ErS" firstAttribute="top" secondItem="dHL-jI-Ew7" secondAttribute="top" constant="32" id="GRq-Fi-J7r"/>
                             <constraint firstItem="dHL-jI-Ew7" firstAttribute="trailing" secondItem="pXl-9j-gLb" secondAttribute="trailing" constant="32" id="Ie8-EB-aOm"/>
                             <constraint firstItem="dHL-jI-Ew7" firstAttribute="bottom" secondItem="pXl-9j-gLb" secondAttribute="bottom" constant="22" id="Jfn-fN-w1F"/>
+                            <constraint firstItem="k2f-WS-j7X" firstAttribute="centerX" secondItem="zIS-qx-Thp" secondAttribute="centerX" id="LLC-iK-WH4"/>
                             <constraint firstItem="pXl-9j-gLb" firstAttribute="leading" secondItem="dHL-jI-Ew7" secondAttribute="leading" constant="32" id="ikE-7Y-kHE"/>
                             <constraint firstItem="dHL-jI-Ew7" firstAttribute="trailing" secondItem="BXH-lc-kyo" secondAttribute="trailing" constant="32" id="oPC-Dn-blC"/>
+                            <constraint firstItem="BXH-lc-kyo" firstAttribute="top" secondItem="XNy-qm-ErS" secondAttribute="bottom" constant="60" id="t1Y-cp-ES6"/>
+                            <constraint firstItem="k2f-WS-j7X" firstAttribute="top" secondItem="dHL-jI-Ew7" secondAttribute="top" constant="32" id="wU8-OT-hDf"/>
                             <constraint firstItem="BXH-lc-kyo" firstAttribute="leading" secondItem="dHL-jI-Ew7" secondAttribute="leading" constant="32" id="y9z-fs-ejO"/>
-                            <constraint firstItem="BXH-lc-kyo" firstAttribute="top" secondItem="Lui-j6-iwJ" secondAttribute="bottom" constant="45" id="zJG-C9-jOc"/>
-                            <constraint firstItem="Lui-j6-iwJ" firstAttribute="centerX" secondItem="zIS-qx-Thp" secondAttribute="centerX" id="zJh-Ew-Mmk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AYM-Sv-eTS"/>
                     <connections>
-                        <outlet property="addProfileImageView" destination="Lui-j6-iwJ" id="YFh-sZ-99S"/>
                         <outlet property="alreadyHaveAnAccountButton" destination="pXl-9j-gLb" id="vtj-Qt-ztq"/>
+                        <outlet property="emailTextField" destination="McW-in-hvX" id="cX2-3o-sYt"/>
+                        <outlet property="passwordTextField" destination="lkh-hA-egL" id="ly4-vW-ucg"/>
+                        <outlet property="profileImageView" destination="k2f-WS-j7X" id="etk-GQ-fN0"/>
+                        <outlet property="repasswordTextField" destination="Uz8-Ja-VuG" id="UWy-KI-4FY"/>
+                        <outlet property="usernameTextField" destination="H4Q-Du-1ix" id="2f0-IL-IAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-0r-6Rm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="-755"/>
+            <point key="canvasLocation" x="531.8840579710145" y="-755.35714285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Flh-hB-Zxe">
@@ -206,6 +233,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vfa-C7-GNw" customClass="TabBarController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W7l-qw-qT0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,7 +250,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Shc-Ai-RPn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zJa-yD-4Ks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jxq-x1-NmO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="book" catalog="system" id="We0-yp-1Xc"/>
                     <toolbarItems/>
@@ -235,13 +262,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bsc-Xq-c3X"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJa-yD-4Ks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425" y="-246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mHC-qe-cO8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3jA-5P-tPH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="WAt-Cj-tui" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="14X-4Q-Lcg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1tP-v9-zZT">
@@ -252,6 +279,7 @@
                         <segue destination="2Xy-c5-5R8" kind="relationship" relationship="rootViewController" id="QAa-y4-R0C"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jA-5P-tPH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1425" y="410"/>
         </scene>
@@ -273,7 +301,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_image" width="512" height="512"/>
+        <image name="add_image" width="144" height="144"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="logo" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
