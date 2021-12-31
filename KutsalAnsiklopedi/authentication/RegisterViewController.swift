@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController{
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
         guard let profileImage = profileImageView.image else {
-            print("profil foto seçiniz")
+            alertAction(title: "", mesaj: "Select a profile image")
             return
         }
         

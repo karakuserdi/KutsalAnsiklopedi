@@ -24,9 +24,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        //cikisyap()
         configureUI()
-        
     }
     
     func configureUI(){
@@ -51,7 +50,7 @@ class TabBarController: UITabBarController {
                 self.present(loginVC, animated: true, completion: nil)
             }
         }else {
-            alertAction(title: "Vay be", mesaj: "Hoş geldin yeni üye :)))")
+            alertAction(title: "Vay be", mesaj: "Aramıza tekrar hoş geldin :)")
         }
     }
     
@@ -62,4 +61,6 @@ class TabBarController: UITabBarController {
             print(error.localizedDescription)
         }
     }
+    
+    
 }

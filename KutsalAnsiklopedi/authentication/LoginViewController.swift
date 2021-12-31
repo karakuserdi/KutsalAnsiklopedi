@@ -44,7 +44,16 @@ class LoginViewController: UIViewController{
     
     //MARK: - Actions
     @IBAction func loginButtonPressed(_ sender: Any) {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
         
+        AuthService.shared.logUserIn(email: email, password: password) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func continueAsAnonymousButtonPressed(_ sender: Any) {
