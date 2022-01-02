@@ -212,10 +212,10 @@
                     </view>
                     <connections>
                         <outlet property="addTitleButton" destination="Eqf-Np-cOr" id="LG1-R1-ltb"/>
-                        <outlet property="baslikTextField" destination="0ho-Tp-PWj" id="daQ-4L-l9M"/>
-                        <outlet property="icerikTextField" destination="Uy0-tM-E5m" id="i2u-s6-IhK"/>
-                        <outlet property="tarihTextField" destination="owu-HC-THT" id="oL5-TP-bZ6"/>
-                        <outlet property="yorumTextView" destination="faj-bM-h0s" id="8yz-Ro-t6H"/>
+                        <outlet property="commentTextView" destination="0ho-Tp-PWj" id="eoL-hh-cWU"/>
+                        <outlet property="contentTextField" destination="Uy0-tM-E5m" id="vlO-pK-paR"/>
+                        <outlet property="dateTextField" destination="owu-HC-THT" id="xGK-tn-eqF"/>
+                        <outlet property="titleTextField" destination="0ho-Tp-PWj" id="fA9-w8-8Xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8E-EK-i3k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

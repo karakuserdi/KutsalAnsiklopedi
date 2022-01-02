@@ -9,13 +9,11 @@ import UIKit
 
 class OpenTitleViewController: UIViewController {
 
-    
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addTitleButton: UIButton!
-    @IBOutlet weak var tarihTextField: UITextField!
-    @IBOutlet weak var icerikTextField: UITextField!
-    @IBOutlet weak var baslikTextField: UITextField!
-    @IBOutlet weak var yorumTextView: UITextView!
-    
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextField!
+    @IBOutlet weak var commentTextView: UITextField!
     var pickerView:UIPickerView?
     var icerik = [String]()
     
@@ -28,15 +26,15 @@ class OpenTitleViewController: UIViewController {
     func configurePickerViewAndDate(){
         ///pickerView
         icerik = ["Gündem","Siyaset","Spor"]
-        icerikTextField.text = icerik[0]
-        icerikTextField.delegate = self
+        contentTextField.text = icerik[0]
+        contentTextField.delegate = self
         pickerView = UIPickerView()
-        icerikTextField.inputView = pickerView
+        contentTextField.inputView = pickerView
         pickerView?.dataSource = self
         pickerView?.delegate = self
         
         ///date
-        tarihTextField.isUserInteractionEnabled = false
+        dateTextField.isUserInteractionEnabled = false
         
         let today = Date()
         let formatter = DateFormatter()
@@ -44,11 +42,11 @@ class OpenTitleViewController: UIViewController {
         formatter.dateFormat = "dd MMMM yyyy"
         
         let date = formatter.string(from: today)
-        tarihTextField.text = date
+        dateTextField.text = date
     }
     
     @IBAction func addTitleButtonPressed(_ sender: Any) {
-        if let title = baslikTextField.text, let date = tarihTextField.text, let icerik = icerikTextField.text{
+        if let title = titleTextField.text, let date = dateTextField.text, let icerik = contentTextField.text{
             TitleService.shared.uploadTitle(title: title, dateStamp: date, titleContent: icerik) { error, ref in
                 if let error = error {
                     print(error.localizedDescription)
@@ -75,7 +73,7 @@ extension OpenTitleViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         return icerik[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        icerikTextField.text = icerik[row]
+        contentTextField.text = icerik[row]
     }
 }
 
