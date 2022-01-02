@@ -10,7 +10,7 @@ import Foundation
 struct User{
     let email:String
     let username:String
-    let profileImageUrl:String
+    var profileImageUrl:URL?
     let uid:String
     
     init(uid:String ,dictionery: [String: AnyObject]){
@@ -18,6 +18,10 @@ struct User{
         
         self.email = dictionery["email"] as? String ?? ""
         self.username = dictionery["username"] as? String ?? ""
-        self.profileImageUrl = dictionery["profileImageUrl"] as? String ?? ""
+        
+        if let profileImageURLString = dictionery["profileImageUrl"] as? String {
+            guard let url = URL(string: profileImageURLString) else {return}
+            self.profileImageUrl = url
+        }
     }
 }

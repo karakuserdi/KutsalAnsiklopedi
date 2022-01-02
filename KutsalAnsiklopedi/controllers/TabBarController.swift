@@ -10,6 +10,15 @@ import Firebase
 
 class TabBarController: UITabBarController {
     
+    var user: User?{
+        didSet{
+            guard let nav = viewControllers?[0] as? UINavigationController else {return}
+            guard let home = nav.viewControllers.first as? HomeViewController else {return}
+            
+            home.user = user
+        }
+    }
+    
     lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .white
@@ -27,7 +36,9 @@ class TabBarController: UITabBarController {
         //cikisyap()
         configureUI()
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         //Check user log in and fetch if user already log in !
         Auth.auth().currentUser != nil ? fetchUser() : print("Giriş yapılmadı")
     }
@@ -46,7 +57,9 @@ class TabBarController: UITabBarController {
     
     //MARK: - api
     func fetchUser(){
-        UserService.shared.fetchUser()
+        UserService.shared.fetchUser { user in
+            self.user = user
+        }
     }
     
     func authenticateUserAndConfigUI(){
@@ -58,8 +71,10 @@ class TabBarController: UITabBarController {
                 self.present(loginVC, animated: true, completion: nil)
             }
         }else {
-            alertAction(title: "", mesaj: "Aramıza tekrar hoş geldin :)")
-            fetchUser()
+            let strocyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let openVC = strocyboard.instantiateViewController(withIdentifier: "openTitle") as! OpenTitleViewController
+            
+            present(openVC, animated: true, completion: nil)
         }
     }
     

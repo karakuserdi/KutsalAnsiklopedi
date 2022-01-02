@@ -24,6 +24,85 @@
             </objects>
             <point key="canvasLocation" x="2279.7101449275365" y="-246.42857142857142"/>
         </scene>
+        <!--Open Title View Controller-->
+        <scene sceneID="bRD-wj-5lu">
+            <objects>
+                <viewController storyboardIdentifier="openTitle" id="jf3-2u-OQ0" customClass="OpenTitleViewController" customModule="KutsalAnsiklopedi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="obt-5K-bgt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-kY-YpL">
+                                <rect key="frame" x="16" y="107" width="382" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tarih" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owu-HC-THT">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="içerik" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uy0-tM-E5m">
+                                        <rect key="frame" x="196" y="0.0" width="186" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LJF-bd-pPr"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="faj-bM-h0s">
+                                <rect key="frame" x="16" y="219" width="382" height="627"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Başlık Giriniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ho-Tp-PWj">
+                                <rect key="frame" x="16" y="163" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WRW-bz-wTD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqf-Np-cOr">
+                                <rect key="frame" x="356.5" y="60" width="41.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kutsal bilgi ekleme sayfası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgy-WL-4nq">
+                                <rect key="frame" x="16" y="60" width="198.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2wO-N3-Tcx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2wO-N3-Tcx" firstAttribute="bottom" secondItem="faj-bM-h0s" secondAttribute="bottom" constant="16" id="2CU-VJ-zCL"/>
+                            <constraint firstItem="2wO-N3-Tcx" firstAttribute="trailing" secondItem="0ho-Tp-PWj" secondAttribute="trailing" constant="16" id="5vQ-E7-g42"/>
+                            <constraint firstItem="0ho-Tp-PWj" firstAttribute="top" secondItem="eMy-kY-YpL" secondAttribute="bottom" constant="16" id="7KS-Yr-k0T"/>
+                            <constraint firstItem="faj-bM-h0s" firstAttribute="leading" secondItem="2wO-N3-Tcx" secondAttribute="leading" constant="16" id="AJp-Y2-WjI"/>
+                            <constraint firstItem="eMy-kY-YpL" firstAttribute="leading" secondItem="2wO-N3-Tcx" secondAttribute="leading" constant="16" id="C3Q-0u-9WY"/>
+                            <constraint firstItem="2wO-N3-Tcx" firstAttribute="trailing" secondItem="faj-bM-h0s" secondAttribute="trailing" constant="16" id="GYu-gR-fXL"/>
+                            <constraint firstItem="eMy-kY-YpL" firstAttribute="top" secondItem="Eqf-Np-cOr" secondAttribute="bottom" constant="16" id="JtN-bF-mdC"/>
+                            <constraint firstItem="faj-bM-h0s" firstAttribute="top" secondItem="0ho-Tp-PWj" secondAttribute="bottom" constant="16" id="QGQ-UQ-srP"/>
+                            <constraint firstItem="0ho-Tp-PWj" firstAttribute="leading" secondItem="2wO-N3-Tcx" secondAttribute="leading" constant="16" id="VWR-g2-80h"/>
+                            <constraint firstItem="2wO-N3-Tcx" firstAttribute="trailing" secondItem="Eqf-Np-cOr" secondAttribute="trailing" constant="16" id="Wgq-Bt-lhX"/>
+                            <constraint firstItem="eMy-kY-YpL" firstAttribute="top" secondItem="Rgy-WL-4nq" secondAttribute="bottom" constant="26.5" id="btz-9V-zuq"/>
+                            <constraint firstItem="2wO-N3-Tcx" firstAttribute="trailing" secondItem="eMy-kY-YpL" secondAttribute="trailing" constant="16" id="g7n-P8-KnL"/>
+                            <constraint firstItem="Rgy-WL-4nq" firstAttribute="leading" secondItem="2wO-N3-Tcx" secondAttribute="leading" constant="16" id="my5-6B-wWk"/>
+                            <constraint firstItem="Rgy-WL-4nq" firstAttribute="top" secondItem="2wO-N3-Tcx" secondAttribute="top" constant="16" id="oko-9J-VzH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8E-EK-i3k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128" y="-555"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="Hin-23-eZa">
             <objects>
@@ -321,6 +400,13 @@
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="logo" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
