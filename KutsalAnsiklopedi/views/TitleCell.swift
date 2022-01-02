@@ -19,7 +19,6 @@ class TitleCell: UITableViewCell {
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var contentLabelView: UIView!
@@ -45,12 +44,12 @@ class TitleCell: UITableViewCell {
     
     func configure(){
         guard let title = title else {return}
+        let viewModel = TitleViewModel(title: title)
         
         titleLabel.text = title.title
-        timeLabel.text = title.dateStamp
-        contentLabel.text = title.titleContent
-        profileImageView.sd_setImage(with: title.user.profileImageUrl, completed: nil)
-        usernameLabel.text = title.user.username
+        usernameLabel.attributedText = viewModel.attributedString2
+        contentLabel.text = viewModel.content
+        profileImageView.sd_setImage(with: viewModel.profileImage, completed: nil)
     }
 
 }

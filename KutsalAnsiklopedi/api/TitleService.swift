@@ -11,12 +11,12 @@ import Firebase
 struct TitleService{
     static let shared = TitleService()
     
-    func uploadTitle(title:String,dateStamp:String,titleContent:String, completion:@escaping(Error?,DatabaseReference) -> Void){
+    func uploadTitle(title:String,titleContent:String, completion:@escaping(Error?,DatabaseReference) -> Void){
         guard let uid = Auth.auth().currentUser?.uid else {return}
         
         let values = [
             "uid": uid,
-            "dateStamp":dateStamp,
+            "dateStamp": Int(NSDate().timeIntervalSince1970),
             "title":title,
             "titleContent": titleContent,
         ] as [String:Any]

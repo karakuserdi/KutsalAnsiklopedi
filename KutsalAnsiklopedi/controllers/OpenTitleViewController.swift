@@ -11,15 +11,17 @@ class OpenTitleViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addTitleButton: UIButton!
-    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var contentTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextField!
     var pickerView:UIPickerView?
+    
     var icerik = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePickerViewAndDate()
+     
+        
     }
 
     //MARK: - Helpers
@@ -33,21 +35,11 @@ class OpenTitleViewController: UIViewController {
         pickerView?.dataSource = self
         pickerView?.delegate = self
         
-        ///date
-        dateTextField.isUserInteractionEnabled = false
-        
-        let today = Date()
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "tr")
-        formatter.dateFormat = "dd MMMM yyyy"
-        
-        let date = formatter.string(from: today)
-        dateTextField.text = date
     }
     
     @IBAction func addTitleButtonPressed(_ sender: Any) {
-        if let title = titleTextField.text, let date = dateTextField.text, let icerik = contentTextField.text{
-            TitleService.shared.uploadTitle(title: title, dateStamp: date, titleContent: icerik) { error, ref in
+        if let title = titleTextField.text, let icerik = contentTextField.text{
+            TitleService.shared.uploadTitle(title: title, titleContent: icerik) { error, ref in
                 if let error = error {
                     print(error.localizedDescription)
                     return
