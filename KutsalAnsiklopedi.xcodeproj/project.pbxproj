@@ -24,6 +24,9 @@
 		D4705CB2278217C80095B0C4 /* OpenTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */; };
 		D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890040277F2EEF00EC0A69 /* Constants.swift */; };
 		D4890044277F327400EC0A69 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890043277F327400EC0A69 /* AuthService.swift */; };
+		D4B96D05278226B1004ED8E6 /* TitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D04278226B1004ED8E6 /* TitleService.swift */; };
+		D4B96D07278228C3004ED8E6 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D06278228C3004ED8E6 /* Title.swift */; };
+		D4B96D0A27822E3A004ED8E6 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D0927822E3A004ED8E6 /* TitleCell.swift */; };
 		D4F91744277F1AD500A70A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTitleViewController.swift; sourceTree = "<group>"; };
 		D4890040277F2EEF00EC0A69 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D4890043277F327400EC0A69 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D4B96D04278226B1004ED8E6 /* TitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleService.swift; sourceTree = "<group>"; };
+		D4B96D06278228C3004ED8E6 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		D4B96D0927822E3A004ED8E6 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,7 @@
 				D4705CAC278208680095B0C4 /* model */,
 				D4890042277F325E00EC0A69 /* api */,
 				D489003F277F2EDD00EC0A69 /* utils */,
+				D4B96D0827822E1F004ED8E6 /* views */,
 				D4F91742277F009200A70A95 /* controllers */,
 				D42C7235277E8AE600E9D5E1 /* authentication */,
 				D42C7217277E6FC900E9D5E1 /* AppDelegate.swift */,
@@ -132,6 +139,7 @@
 			children = (
 				D4705CAD2782087A0095B0C4 /* User.swift */,
 				D4705CAF278208DD0095B0C4 /* AuthUser.swift */,
+				D4B96D06278228C3004ED8E6 /* Title.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -150,8 +158,17 @@
 			children = (
 				D4890043277F327400EC0A69 /* AuthService.swift */,
 				D4705CAA278206560095B0C4 /* UserService.swift */,
+				D4B96D04278226B1004ED8E6 /* TitleService.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		D4B96D0827822E1F004ED8E6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D4B96D0927822E3A004ED8E6 /* TitleCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		D4F91742277F009200A70A95 /* controllers */ = {
@@ -282,6 +299,7 @@
 			files = (
 				D42C7218277E6FC900E9D5E1 /* AppDelegate.swift in Sources */,
 				D42C722E277E767F00E9D5E1 /* TabBarController.swift in Sources */,
+				D4B96D05278226B1004ED8E6 /* TitleService.swift in Sources */,
 				D42C7234277E886B00E9D5E1 /* RegisterViewController.swift in Sources */,
 				D4890044277F327400EC0A69 /* AuthService.swift in Sources */,
 				D42C721A277E6FC900E9D5E1 /* SceneDelegate.swift in Sources */,
@@ -289,7 +307,9 @@
 				D42C7232277E831900E9D5E1 /* Extensions.swift in Sources */,
 				D4705CAB278206560095B0C4 /* UserService.swift in Sources */,
 				D42C7230277E7B7600E9D5E1 /* LoginViewController.swift in Sources */,
+				D4B96D07278228C3004ED8E6 /* Title.swift in Sources */,
 				D42C722C277E71BE00E9D5E1 /* HomeViewController.swift in Sources */,
+				D4B96D0A27822E3A004ED8E6 /* TitleCell.swift in Sources */,
 				D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */,
 				D4705CB0278208DD0095B0C4 /* AuthUser.swift in Sources */,
 				D4705CAE2782087A0095B0C4 /* User.swift in Sources */,
