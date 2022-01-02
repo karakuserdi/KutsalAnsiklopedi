@@ -10,7 +10,7 @@ import Firebase
 
 class TabBarController: UITabBarController {
     
-    let addButton: UIButton = {
+    lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .white
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -26,6 +26,10 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         //cikisyap()
         configureUI()
+        
+        
+        //Check user log in and fetch if user already log in !
+        Auth.auth().currentUser != nil ? fetchUser() : print("Giriş yapılmadı")
     }
     
     func configureUI(){
@@ -41,6 +45,10 @@ class TabBarController: UITabBarController {
     }
     
     //MARK: - api
+    func fetchUser(){
+        UserService.shared.fetchUser()
+    }
+    
     func authenticateUserAndConfigUI(){
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
@@ -51,6 +59,7 @@ class TabBarController: UITabBarController {
             }
         }else {
             alertAction(title: "", mesaj: "Aramıza tekrar hoş geldin :)")
+            fetchUser()
         }
     }
     

@@ -68,7 +68,7 @@ class RegisterViewController: UIViewController{
             return
         }
         
-        let user = User(email: email, password: password, username: username, profileImage: profileImage)
+        let user = AuthUser(email: email, password: password, username: username, profileImage: profileImage)
         
         AuthService.shared.registerUser(user: user) { error,ref in
             

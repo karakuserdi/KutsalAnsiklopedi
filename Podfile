@@ -13,7 +13,7 @@ target 'KutsalAnsiklopedi' do
 #  	pod 'Firebase/Messaging'
 #	pod 'Firebase/Firestore'
 #	pod 'ActiveLabel'
-#	pod 'SDWebImage', '~> 5.0'
+	pod 'SDWebImage', '~> 5.0'
 #	pod 'JGProgressHUD'
 #	pod 'YPImagePicker'
 

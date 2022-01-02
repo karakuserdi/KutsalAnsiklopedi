@@ -18,6 +18,9 @@
 		D42C7230277E7B7600E9D5E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C722F277E7B7600E9D5E1 /* LoginViewController.swift */; };
 		D42C7232277E831900E9D5E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C7231277E831900E9D5E1 /* Extensions.swift */; };
 		D42C7234277E886B00E9D5E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C7233277E886B00E9D5E1 /* RegisterViewController.swift */; };
+		D4705CAB278206560095B0C4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAA278206560095B0C4 /* UserService.swift */; };
+		D4705CAE2782087A0095B0C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAD2782087A0095B0C4 /* User.swift */; };
+		D4705CB0278208DD0095B0C4 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAF278208DD0095B0C4 /* AuthUser.swift */; };
 		D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890040277F2EEF00EC0A69 /* Constants.swift */; };
 		D4890044277F327400EC0A69 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890043277F327400EC0A69 /* AuthService.swift */; };
 		D4F91744277F1AD500A70A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */; };
@@ -39,6 +42,9 @@
 		D42C722F277E7B7600E9D5E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D42C7231277E831900E9D5E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D42C7233277E886B00E9D5E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D4705CAA278206560095B0C4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D4705CAD2782087A0095B0C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D4705CAF278208DD0095B0C4 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		D4890040277F2EEF00EC0A69 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D4890043277F327400EC0A69 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		D42C7216277E6FC900E9D5E1 /* KutsalAnsiklopedi */ = {
 			isa = PBXGroup;
 			children = (
+				D4705CAC278208680095B0C4 /* model */,
 				D4890042277F325E00EC0A69 /* api */,
 				D489003F277F2EDD00EC0A69 /* utils */,
 				D4F91742277F009200A70A95 /* controllers */,
@@ -118,6 +125,15 @@
 			path = authentication;
 			sourceTree = "<group>";
 		};
+		D4705CAC278208680095B0C4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D4705CAD2782087A0095B0C4 /* User.swift */,
+				D4705CAF278208DD0095B0C4 /* AuthUser.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		D489003F277F2EDD00EC0A69 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D4890043277F327400EC0A69 /* AuthService.swift */,
+				D4705CAA278206560095B0C4 /* UserService.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -266,9 +283,12 @@
 				D4890044277F327400EC0A69 /* AuthService.swift in Sources */,
 				D42C721A277E6FC900E9D5E1 /* SceneDelegate.swift in Sources */,
 				D42C7232277E831900E9D5E1 /* Extensions.swift in Sources */,
+				D4705CAB278206560095B0C4 /* UserService.swift in Sources */,
 				D42C7230277E7B7600E9D5E1 /* LoginViewController.swift in Sources */,
 				D42C722C277E71BE00E9D5E1 /* HomeViewController.swift in Sources */,
 				D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */,
+				D4705CB0278208DD0095B0C4 /* AuthUser.swift in Sources */,
+				D4705CAE2782087A0095B0C4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,6 @@
 import UIKit
 import Firebase
 
-struct User{
-    let email:String
-    let password:String
-    let username:String
-    let profileImage:UIImage
-}
-
 struct AuthService{
     static let shared = AuthService()
     
@@ -22,7 +15,7 @@ struct AuthService{
         Auth.auth().signIn(withEmail: email, password: password,completion: completion)
     }
     
-    func registerUser(user: User, completion: @escaping(Error?, DatabaseReference) -> Void){
+    func registerUser(user: AuthUser, completion: @escaping(Error?, DatabaseReference) -> Void){
         let email = user.email
         let password = user.password
         let username = user.username
