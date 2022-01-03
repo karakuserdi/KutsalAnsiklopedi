@@ -28,6 +28,11 @@
 		D4B96D07278228C3004ED8E6 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D06278228C3004ED8E6 /* Title.swift */; };
 		D4B96D0A27822E3A004ED8E6 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D0927822E3A004ED8E6 /* TitleCell.swift */; };
 		D4B96D0D278243B8004ED8E6 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D0C278243B8004ED8E6 /* TitleViewModel.swift */; };
+		D4B96D3127827B85004ED8E6 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D3027827B85004ED8E6 /* CommentTableViewController.swift */; };
+		D4B96D33278280E0004ED8E6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D32278280E0004ED8E6 /* CommentCell.swift */; };
+		D4B96D35278284E6004ED8E6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D34278284E6004ED8E6 /* Comment.swift */; };
+		D4B96D372782865D004ED8E6 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D362782865D004ED8E6 /* CommentService.swift */; };
+		D4B96D39278289F5004ED8E6 /* NewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */; };
 		D4F91744277F1AD500A70A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		D4B96D06278228C3004ED8E6 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		D4B96D0927822E3A004ED8E6 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		D4B96D0C278243B8004ED8E6 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		D4B96D3027827B85004ED8E6 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
+		D4B96D32278280E0004ED8E6 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		D4B96D34278284E6004ED8E6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D4B96D362782865D004ED8E6 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentViewController.swift; sourceTree = "<group>"; };
 		D4F91743277F1AD500A70A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +152,7 @@
 				D4705CAD2782087A0095B0C4 /* User.swift */,
 				D4705CAF278208DD0095B0C4 /* AuthUser.swift */,
 				D4B96D06278228C3004ED8E6 /* Title.swift */,
+				D4B96D34278284E6004ED8E6 /* Comment.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				D4890043277F327400EC0A69 /* AuthService.swift */,
 				D4705CAA278206560095B0C4 /* UserService.swift */,
 				D4B96D04278226B1004ED8E6 /* TitleService.swift */,
+				D4B96D362782865D004ED8E6 /* CommentService.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B96D0927822E3A004ED8E6 /* TitleCell.swift */,
+				D4B96D32278280E0004ED8E6 /* CommentCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -188,6 +201,8 @@
 				D42C722B277E71BE00E9D5E1 /* HomeViewController.swift */,
 				D42C722D277E767F00E9D5E1 /* TabBarController.swift */,
 				D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */,
+				D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */,
+				D4B96D3027827B85004ED8E6 /* CommentTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -308,6 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B96D33278280E0004ED8E6 /* CommentCell.swift in Sources */,
+				D4B96D3127827B85004ED8E6 /* CommentTableViewController.swift in Sources */,
 				D42C7218277E6FC900E9D5E1 /* AppDelegate.swift in Sources */,
 				D42C722E277E767F00E9D5E1 /* TabBarController.swift in Sources */,
 				D4B96D05278226B1004ED8E6 /* TitleService.swift in Sources */,
@@ -317,10 +334,13 @@
 				D4705CB2278217C80095B0C4 /* OpenTitleViewController.swift in Sources */,
 				D42C7232277E831900E9D5E1 /* Extensions.swift in Sources */,
 				D4705CAB278206560095B0C4 /* UserService.swift in Sources */,
+				D4B96D39278289F5004ED8E6 /* NewCommentViewController.swift in Sources */,
 				D4B96D0D278243B8004ED8E6 /* TitleViewModel.swift in Sources */,
 				D42C7230277E7B7600E9D5E1 /* LoginViewController.swift in Sources */,
+				D4B96D372782865D004ED8E6 /* CommentService.swift in Sources */,
 				D4B96D07278228C3004ED8E6 /* Title.swift in Sources */,
 				D42C722C277E71BE00E9D5E1 /* HomeViewController.swift in Sources */,
+				D4B96D35278284E6004ED8E6 /* Comment.swift in Sources */,
 				D4B96D0A27822E3A004ED8E6 /* TitleCell.swift in Sources */,
 				D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */,
 				D4705CB0278208DD0095B0C4 /* AuthUser.swift in Sources */,

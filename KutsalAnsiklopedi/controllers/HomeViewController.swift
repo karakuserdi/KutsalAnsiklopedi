@@ -72,6 +72,16 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let title = titles[indexPath.row]
+        performSegue(withIdentifier: "toComment", sender: title)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toComment"{
+            let title = sender as? Title
+            let destinationVC = segue.destination as! CommentTableViewController
+            destinationVC.tit = title
+        }
     }
 }
