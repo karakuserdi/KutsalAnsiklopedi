@@ -8,7 +8,11 @@
 import UIKit
 import Firebase
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController{
+    
+    //MARK: - Properties
+    let pickerTextField = UITextField(frame: CGRect(x: 0, y: 50, width: 200, height: 100))
+    var pickerData = [String]()
     
     var user: User?{
         didSet{
@@ -31,9 +35,10 @@ class TabBarController: UITabBarController {
         return button
     }()
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cikisyap()
+        //logout()
         configureUI()
         
     }
@@ -43,6 +48,7 @@ class TabBarController: UITabBarController {
         Auth.auth().currentUser != nil ? fetchUser() : print("Giriş yapılmadı")
     }
     
+    //MARK: - Configure
     func configureUI(){
         view.addSubview(addButton)
         addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
@@ -55,7 +61,7 @@ class TabBarController: UITabBarController {
         authenticateUserAndConfigUI()
     }
     
-    //MARK: - api
+    //MARK: - API
     func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid else {return}
         UserService.shared.fetchUser(uid: uid) { user in
@@ -63,6 +69,7 @@ class TabBarController: UITabBarController {
         }
     }
     
+    //MARK: - Helper functions
     func authenticateUserAndConfigUI(){
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
@@ -72,20 +79,84 @@ class TabBarController: UITabBarController {
                 self.present(loginVC, animated: true, completion: nil)
             }
         }else {
-            let strocyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let openVC = strocyboard.instantiateViewController(withIdentifier: "openTitle") as! OpenTitleViewController
-            
-            present(openVC, animated: true, completion: nil)
+            addNewTitle()
         }
     }
     
-    func cikisyap(){
+    func addNewTitle(){
+        pickerData = ["Genel","Spor","Siyaset"]
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: 200,height: 200)
+        let titleTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        let pickerView = UIPickerView()
+        
+        pickerTextField.inputView = pickerView
+        pickerTextField.placeholder = "Select a content"
+        pickerTextField.delegate = self
+        
+        titleTextField.placeholder = "Enter a title"
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        vc.view.addSubview(titleTextField)
+        vc.view.addSubview(pickerTextField)
+        
+        let editRadiusAlert = UIAlertController(title: "Create a new title", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        editRadiusAlert.setValue(vc, forKey: "contentViewController")
+        editRadiusAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { action in
+            if let title = titleTextField.text, let icerik = self.pickerTextField.text{
+                if title.isEmpty || icerik.isEmpty {
+                    return
+                }else{
+                    TitleService.shared.uploadTitle(title: title, titleContent: icerik) { error, ref in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            return
+                        }
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }))
+        
+        editRadiusAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: { alert in
+            self.pickerTextField.text = ""
+            titleTextField.text = ""
+            
+            self.pickerTextField.placeholder = "Select a content"
+            titleTextField.placeholder = "Enter a title"
+        }))
+        self.present(editRadiusAlert, animated: true)
+    }
+    
+    func logout(){
         do {
             try Auth.auth().signOut()
         } catch {
             print(error.localizedDescription)
         }
     }
+}
+
+//MARK: - UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate
+extension TabBarController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerTextField.text = pickerData[row]
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }

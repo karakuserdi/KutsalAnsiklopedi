@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D3F226A93252FFAD016B8D91 /* Pods_KutsalAnsiklopedi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B475880CA6A5CDCBFBD19DD /* Pods_KutsalAnsiklopedi.framework */; };
+		D41FBEB32782DB11003C1782 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41FBEB22782DB11003C1782 /* SettingsViewController.swift */; };
 		D42C7218277E6FC900E9D5E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C7217277E6FC900E9D5E1 /* AppDelegate.swift */; };
 		D42C721A277E6FC900E9D5E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C7219277E6FC900E9D5E1 /* SceneDelegate.swift */; };
 		D42C721F277E6FC900E9D5E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42C721D277E6FC900E9D5E1 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		D4705CAB278206560095B0C4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAA278206560095B0C4 /* UserService.swift */; };
 		D4705CAE2782087A0095B0C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAD2782087A0095B0C4 /* User.swift */; };
 		D4705CB0278208DD0095B0C4 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CAF278208DD0095B0C4 /* AuthUser.swift */; };
-		D4705CB2278217C80095B0C4 /* OpenTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */; };
 		D4890041277F2EEF00EC0A69 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890040277F2EEF00EC0A69 /* Constants.swift */; };
 		D4890044277F327400EC0A69 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4890043277F327400EC0A69 /* AuthService.swift */; };
 		D4B96D05278226B1004ED8E6 /* TitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B96D04278226B1004ED8E6 /* TitleService.swift */; };
@@ -40,6 +40,7 @@
 		2A637852D12EF6C20A34B9FB /* Pods-KutsalAnsiklopedi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KutsalAnsiklopedi.debug.xcconfig"; path = "Target Support Files/Pods-KutsalAnsiklopedi/Pods-KutsalAnsiklopedi.debug.xcconfig"; sourceTree = "<group>"; };
 		3B475880CA6A5CDCBFBD19DD /* Pods_KutsalAnsiklopedi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KutsalAnsiklopedi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1081EF28FBC075CDED8703 /* Pods-KutsalAnsiklopedi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KutsalAnsiklopedi.release.xcconfig"; path = "Target Support Files/Pods-KutsalAnsiklopedi/Pods-KutsalAnsiklopedi.release.xcconfig"; sourceTree = "<group>"; };
+		D41FBEB22782DB11003C1782 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D42C7214277E6FC900E9D5E1 /* KutsalAnsiklopedi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KutsalAnsiklopedi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42C7217277E6FC900E9D5E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D42C7219277E6FC900E9D5E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		D4705CAA278206560095B0C4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D4705CAD2782087A0095B0C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4705CAF278208DD0095B0C4 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
-		D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTitleViewController.swift; sourceTree = "<group>"; };
 		D4890040277F2EEF00EC0A69 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D4890043277F327400EC0A69 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D4B96D04278226B1004ED8E6 /* TitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleService.swift; sourceTree = "<group>"; };
@@ -200,9 +200,9 @@
 				D42C7235277E8AE600E9D5E1 /* authentication */,
 				D42C722B277E71BE00E9D5E1 /* HomeViewController.swift */,
 				D42C722D277E767F00E9D5E1 /* TabBarController.swift */,
-				D4705CB1278217C80095B0C4 /* OpenTitleViewController.swift */,
 				D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */,
 				D4B96D3027827B85004ED8E6 /* CommentTableViewController.swift */,
+				D41FBEB22782DB11003C1782 /* SettingsViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -331,12 +331,12 @@
 				D42C7234277E886B00E9D5E1 /* RegisterViewController.swift in Sources */,
 				D4890044277F327400EC0A69 /* AuthService.swift in Sources */,
 				D42C721A277E6FC900E9D5E1 /* SceneDelegate.swift in Sources */,
-				D4705CB2278217C80095B0C4 /* OpenTitleViewController.swift in Sources */,
 				D42C7232277E831900E9D5E1 /* Extensions.swift in Sources */,
 				D4705CAB278206560095B0C4 /* UserService.swift in Sources */,
 				D4B96D39278289F5004ED8E6 /* NewCommentViewController.swift in Sources */,
 				D4B96D0D278243B8004ED8E6 /* TitleViewModel.swift in Sources */,
 				D42C7230277E7B7600E9D5E1 /* LoginViewController.swift in Sources */,
+				D41FBEB32782DB11003C1782 /* SettingsViewController.swift in Sources */,
 				D4B96D372782865D004ED8E6 /* CommentService.swift in Sources */,
 				D4B96D07278228C3004ED8E6 /* Title.swift in Sources */,
 				D42C722C277E71BE00E9D5E1 /* HomeViewController.swift in Sources */,

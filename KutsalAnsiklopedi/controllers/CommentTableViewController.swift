@@ -6,20 +6,26 @@
 //
 
 import UIKit
+import Firebase
 import SDWebImage
 
 class CommentTableViewController: UITableViewController {
     
-    var tit:Title?
+    //MARK: - Properties
+    var tites:Title?
     var comments = [Comment]()
     var expandedCells = [Int]()
-   
+    
+    @IBOutlet weak var addCommentButton: UIButton!
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        if let tit = tit {
-            self.navigationItem.prompt = tit.title
+        
+        
+        if let tites = tites {
+            self.navigationItem.prompt = tites.title
         }
     }
     
@@ -27,17 +33,15 @@ class CommentTableViewController: UITableViewController {
         fetchComments()
     }
     
+    //MARK: - Helpers
+    
     func fetchComments(){
-        if let tit = tit {
-            CommentService.shared.fetchComments(titleId: tit.titleId) { comments in
+        if let tites = tites {
+            CommentService.shared.fetchComments(titleId: tites.titleId) { comments in
                 self.comments = comments
                 self.tableView.reloadData()
             }
         }
-    }
-    
-    @IBAction func addCommentButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toNewComment", sender: tit?.titleId)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,6 +50,11 @@ class CommentTableViewController: UITableViewController {
             let destinationVC = segue.destination as! NewCommentViewController
             destinationVC.titleId = titId
         }
+    }
+    
+    //MARK: - Actions
+    @IBAction func addCommentButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toNewComment", sender: tites?.titleId)
     }
     
     @objc func deleteAction(_ sender: UIButton){
@@ -64,9 +73,8 @@ class CommentTableViewController: UITableViewController {
           self.tableView.endUpdates()
       }
 
-    // MARK: - Table view data source
+    // MARK: - tableView datasource, delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return comments.count
     }
 

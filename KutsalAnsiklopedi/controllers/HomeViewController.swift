@@ -23,8 +23,6 @@ class HomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        
         
     }
     
@@ -81,7 +79,7 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
         if segue.identifier == "toComment"{
             let title = sender as? Title
             let destinationVC = segue.destination as! CommentTableViewController
-            destinationVC.tit = title
+            destinationVC.tites = title
         }
     }
 }

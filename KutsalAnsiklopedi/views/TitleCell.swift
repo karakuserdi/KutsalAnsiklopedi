@@ -14,8 +14,7 @@ class TitleCell: UITableViewCell {
             configure()
         }
     }
-    
-    
+
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -27,9 +26,11 @@ class TitleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         titleView.layer.masksToBounds = true
         titleView.layer.cornerRadius = 5
+        
+        contentLabelView.layer.masksToBounds = true
+        contentLabelView.layer.cornerRadius = 2
         
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 20

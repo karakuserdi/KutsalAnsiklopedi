@@ -23,12 +23,14 @@ class NewCommentViewController: UIViewController {
     }
     
     @IBAction func newCommentButtonPressed(_ sender: Any) {
+        
+        
         if let titleId = titleId, let comment = commentTextView.text{
             
             let todayDate = Date()
             let formatter = DateFormatter()
             formatter.locale = Locale(identifier: "tr")
-            formatter.dateFormat = "dd MMMM yyyy"
+            formatter.dateFormat = "dd MMMM yyyy HH:mm"
             let today = formatter.string(from: todayDate)
             
             CommentService.shared.uploadComment(comment: comment, date: today, titleId: titleId) { error, ref in
