@@ -198,10 +198,10 @@
 			isa = PBXGroup;
 			children = (
 				D42C7235277E8AE600E9D5E1 /* authentication */,
-				D42C722B277E71BE00E9D5E1 /* HomeViewController.swift */,
 				D42C722D277E767F00E9D5E1 /* TabBarController.swift */,
-				D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */,
+				D42C722B277E71BE00E9D5E1 /* HomeViewController.swift */,
 				D4B96D3027827B85004ED8E6 /* CommentTableViewController.swift */,
+				D4B96D38278289F5004ED8E6 /* NewCommentViewController.swift */,
 				D41FBEB22782DB11003C1782 /* SettingsViewController.swift */,
 			);
 			path = controllers;

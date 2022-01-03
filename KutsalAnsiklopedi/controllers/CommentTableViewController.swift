@@ -22,26 +22,30 @@ class CommentTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         if let tites = tites {
             self.navigationItem.prompt = tites.title
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil{
+            addCommentButton.isHidden = false
+        }else{
+            addCommentButton.isHidden = true
+        }
+        
         fetchComments()
     }
     
     //MARK: - Helpers
     
     func fetchComments(){
-        if let tites = tites {
-            CommentService.shared.fetchComments(titleId: tites.titleId) { comments in
-                self.comments = comments
-                self.tableView.reloadData()
+            if let tites = tites {
+                CommentService.shared.fetchComments(titleId: tites.titleId) { comments in
+                    self.comments = comments
+                    self.tableView.reloadData()
+                }
             }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,7 +89,6 @@ class CommentTableViewController: UITableViewController {
         cell.selectionStyle = .none
         cell.showMoreButton.tag = indexPath.row
         cell.showMoreButton?.addTarget(self, action: #selector(deleteAction), for: UIControl.Event.touchUpInside)
-        
         
         if comment.comment.count <= 70{
             cell.showMoreButton.isHidden = true
